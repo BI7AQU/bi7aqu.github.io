@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Terrans ONSTEP V4 Lite使用教程 | 桃江老凌的小破站</title><meta name="author" content="Steve Ling"><meta name="copyright" content="Steve Ling"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言：最近帮星途天文社安装了一套T牌OnStep，研究了一下天文摄影相关软件的使用。闲的无聊就写了这篇blog，也是方便其他人使用吧。  产品介绍：     安装教程：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1gS4y1d71d&#x2F;移动端： 出摊时推荐使用手机操作。背个电脑出摊好麻烦的。  ​	手机安装 TerransOnStep_2.620.apk  电脑端： ASCOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Terrans ONSTEP V4 Lite使用教程">
+<meta property="og:url" content="https://www.steveling.cn/2024/12/22/onsteplite/index.html">
+<meta property="og:site_name" content="桃江老凌的小破站">
+<meta property="og:description" content="前言：最近帮星途天文社安装了一套T牌OnStep，研究了一下天文摄影相关软件的使用。闲的无聊就写了这篇blog，也是方便其他人使用吧。  产品介绍：     安装教程：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1gS4y1d71d&#x2F;移动端： 出摊时推荐使用手机操作。背个电脑出摊好麻烦的。  ​	手机安装 TerransOnStep_2.620.apk  电脑端： ASCOM">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.steveling.cn/img/icon.jpg">
+<meta property="article:published_time" content="2024-12-22T15:07:50.000Z">
+<meta property="article:modified_time" content="2025-10-09T15:17:27.052Z">
+<meta property="article:author" content="Steve Ling">
+<meta property="article:tag" content="OnStep">
+<meta property="article:tag" content="GoTo">
+<meta property="article:tag" content="赤道仪">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.steveling.cn/img/icon.jpg"><link rel="shortcut icon" href="/img/icon.jpg"><link rel="canonical" href="https://www.steveling.cn/2024/12/22/onsteplite/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":false,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Terrans ONSTEP V4 Lite使用教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-10-09 23:17:27'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/icon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://aunu.steveling.cn/"><i class="fa-fw fa fa-star"></i><span> 星空飨宴</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="桃江老凌的小破站"><span class="site-name">桃江老凌的小破站</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://aunu.steveling.cn/"><i class="fa-fw fa fa-star"></i><span> 星空飨宴</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Terrans ONSTEP V4 Lite使用教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-22T15:07:50.000Z" title="发表于 2024-12-22 23:07:50">2024-12-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-10-09T15:17:27.052Z" title="更新于 2025-10-09 23:17:27">2025-10-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OnStep/">OnStep</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Terrans ONSTEP V4 Lite使用教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>最近帮星途天文社安装了一套T牌OnStep，研究了一下天文摄影相关软件的使用。闲的无聊就写了这篇blog，也是方便其他人使用吧。</p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/A.jpg" alt="EQ3D赤道仪"></p>
+<h2 id="产品介绍："><a href="#产品介绍：" class="headerlink" title="产品介绍："></a>产品介绍：</h2><p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/Main.png" alt="Main"></p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/Plugs.png" alt="Plugs"></p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/General.png" alt="General"></p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/Wire.png" alt="Wire"></p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/Components.png" alt="Component"></p>
+<h2 id="安装教程："><a href="#安装教程：" class="headerlink" title="安装教程："></a>安装教程：</h2><h3 id="https-www-bilibili-com-video-BV1gS4y1d71d"><a href="#https-www-bilibili-com-video-BV1gS4y1d71d" class="headerlink" title="https://www.bilibili.com/video/BV1gS4y1d71d/"></a><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1gS4y1d71d/">https://www.bilibili.com/video/BV1gS4y1d71d/</a></h3><h3 id="移动端："><a href="#移动端：" class="headerlink" title="移动端："></a>移动端：</h3><blockquote>
+<p>出摊时推荐使用手机操作。背个电脑出摊好麻烦的。</p>
+</blockquote>
+<p>​	手机安装 TerransOnStep_2.620.apk</p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/%E7%A7%BB%E5%8A%A8%E7%AB%AFONSTEP%20APP%E8%AE%BE%E5%AE%9A.jpeg" alt="移动端ONSTEP APP设定"></p>
+<h3 id="电脑端："><a href="#电脑端：" class="headerlink" title="电脑端："></a>电脑端：</h3><blockquote>
+<p>ASCOMPlatform，OnStep ASCOM驱动，CH340G驱动是必须安装的。电脑端可以使用N.I.N.A.，Stellarium，PHD2三种软件控制，三选一即可。笔者选择的是安装全家桶。</p>
+</blockquote>
+<ol>
+<li><h4 id="安装-ASCOMPlatform"><a href="#安装-ASCOMPlatform" class="headerlink" title="安装 [ASCOMPlatform]"></a>安装 [ASCOMPlatform]</h4><p>应用最广泛的天文设备通用连接平台 <a target="_blank" rel="noopener" href="https://ascom-standards.org/index.htm">官网链接</a></p>
+</li>
+<li><h4 id="安装-N-I-N-A"><a href="#安装-N-I-N-A" class="headerlink" title="安装 [N.I.N.A]"></a>安装 [N.I.N.A]</h4><p>深空天体摄影的全自动化序列拍摄软件 <a target="_blank" rel="noopener" href="https://nighttime-imaging.eu/">官网链接</a></p>
+</li>
+<li><h4 id="安装-Stellarium"><a href="#安装-Stellarium" class="headerlink" title="安装 [Stellarium]"></a>安装 [Stellarium]</h4><p>虚拟天文馆 <a target="_blank" rel="noopener" href="https://stellarium.org/">官网链接</a></p>
+</li>
+<li><h4 id="安装-PHD2"><a href="#安装-PHD2" class="headerlink" title="安装 [PHD2]"></a>安装 [PHD2]</h4><p>广受欢迎的导星软件 <a target="_blank" rel="noopener" href="https://openphdguiding.org/">官网链接</a></p>
+</li>
+<li><h4 id="安装-OnStep-ASCOM驱动"><a href="#安装-OnStep-ASCOM驱动" class="headerlink" title="安装 [OnStep ASCOM驱动]"></a>安装 [OnStep ASCOM驱动]</h4><p>需要先安装ASCOM Platform <a target="_blank" rel="noopener" href="http://stellarjourney.com/?r=site/software_telescope">官网链接</a></p>
+</li>
+<li><h4 id="安装-CH340G驱动"><a href="#安装-CH340G驱动" class="headerlink" title="安装 [CH340G驱动]"></a>安装 [CH340G驱动]</h4><p>用于驱动OnStep与电脑通信的串口芯片 <a target="_blank" rel="noopener" href="https://www.wch.cn/">官网链接</a></p>
+</li>
+</ol>
+<h2 id="电脑软件使用教程："><a href="#电脑软件使用教程：" class="headerlink" title="电脑软件使用教程："></a>电脑软件使用教程：</h2><h3 id="使用Stellarium："><a href="#使用Stellarium：" class="headerlink" title="使用Stellarium："></a>使用Stellarium：</h3><p>​	当使用电脑控制设备进行简单的GOTO操作时，可使用Stellarium的图形化星图界面进行方便的控制。在使用前，建议先通过手机APP设置好设备的观测地点和日期时间，并完成三星校准操作。</p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/PC%E7%AB%AF%20Stellarium%20%E8%99%9A%E6%8B%9F%E5%A4%A9%E6%96%87%E9%A6%86%20%E4%BD%BF%E7%94%A8.jpeg" alt="PC端 Stellarium 虚拟天文馆 使用"></p>
+<h3 id="使用N-I-N-A："><a href="#使用N-I-N-A：" class="headerlink" title="使用N.I.N.A："></a>使用N.I.N.A：</h3><blockquote>
+<p>An astrophotography imaging suite,which has full equipment control:</p>
+<ul>
+<li>Cameras</li>
+<li>Telescopes</li>
+<li>Filter Wheels</li>
+<li>Focusers</li>
+<li>Rotators</li>
+<li>Switches</li>
+<li>Guiders</li>
+<li>Weather Devices</li>
+<li>Domes</li>
+<li>Safety Monitors</li>
+</ul>
+</blockquote>
+<ol>
+<li>为控制盒接通12V供电，并通过USB线将控制盒连接到电脑。</li>
+<li>打开电脑上的设备管理器，查看是否识别到CH340串口设备，并记住该COM口号码（如图中为COM3）。</li>
+</ol>
+<blockquote>
+<p>如果未识别到请尝试重启电脑 \ 重新安装CH340驱动 \ 重新插入控制盒。</p>
+</blockquote>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/NINA/1.png" alt="1"></p>
+<ol start="3">
+<li>打开NINA，第一步打开支架（Mount）设备界面，第二步选择Onstep，第三步打开设置。</li>
+</ol>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/NINA/2.png" alt="2"></p>
+<ol start="4">
+<li><p>在弹出的设置窗口中，Port选择在上一步中查看到的COM口，本教程中选择COM3。</p>
+<blockquote>
+<p>如果识别成功，下方的所有参数都将显示，如未连接成功，下方参数将不会显示。</p>
+</blockquote>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/NINA/3.png" alt="3"></p>
+</li>
+<li><p>所有参数识别成功后，点击OK关闭此设置窗口，点击连接。</p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/NINA/4.png" alt="4"></p>
+</li>
+<li><p>点击连接后，可能会弹出以下窗口帮助您同步NINA和控制盒的位置信息。</p>
+<blockquote>
+<p><strong>如果已经在NINA中设置好您的观测位置而Onstep控制盒中未设置，可点击From NINA to Mount。</strong></p>
+<p><strong>如果已经在Onstep控制盒中设置好您的观测位置而NINA中未设置，可点击From Mount to NINA 。</strong></p>
+</blockquote>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/NINA/5.png" alt="5"></p>
+</li>
+<li><p>随后当所有参数都已经显示，表示NINA已经成功连接到Onstep。关于如何使用NINA进行拍摄，请查看NINA使用教程。</p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/NINA/6.png" alt="6"></p>
+</li>
+</ol>
+<h3 id="使用PHD2："><a href="#使用PHD2：" class="headerlink" title="使用PHD2："></a>使用PHD2：</h3><ol>
+<li>为控制盒接通12V供电，并通过USB线将控制盒连接到电脑。</li>
+<li>打开电脑上的设备管理器，查看是否识别到CH340串口设备，并记住该COM口号码（如图中为COM3）。</li>
+</ol>
+<blockquote>
+<p>如果未识别到请尝试重启电脑 \ 重新安装CH340驱动 \ 重新插入控制盒。</p>
+</blockquote>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/PHD2/1.png" alt="1"></p>
+<ol start="3">
+<li>打开PHD2软件，点击 第一步连接设备 。在弹出窗口中，第二步选择赤道仪型号为Onstep。随后点击 第三步设置。</li>
+</ol>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/PHD2/2.png" alt="2"></p>
+<ol start="4">
+<li><p>在弹出的设置窗口中，Port选择在上一步中查看到的COM口，本教程中选择COM3。如果识别成功，下方的所有参数都将显示，如未连接成功，下方参数将不会显示。</p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/PHD2/3.png" alt="3"></p>
+</li>
+<li><p>所有参数识别成功后，点击OK关闭此设置窗口，点击连接。此时PHD2已经成功连接到Onstep控制盒。关于如何使用PHD2进行导星，请查看PHD2使用教程。</p>
+<p><img src="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/Imgs/PHD2/4.png" alt="4"></p>
+</li>
+</ol>
+<h2 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h2><h3 id="恢复初始固件：V4-Lite版本"><a href="#恢复初始固件：V4-Lite版本" class="headerlink" title="恢复初始固件：V4 Lite版本"></a>恢复初始固件：<a target="_blank" rel="noopener" href="https://help.terrans-industry.com/docs/hui-fu-chu-shi-gu-jian#%E2%97%8F_V4_Lite%E7%89%88%E6%9C%AC">V4 Lite版本</a></h3><h3 id="N-I-N-A配合Stellarium使用：PDF文件"><a href="#N-I-N-A配合Stellarium使用：PDF文件" class="headerlink" title="N.I.N.A配合Stellarium使用：PDF文件"></a>N.I.N.A配合Stellarium使用：<a target="_blank" rel="noopener" href="https://bi7aqu.oss-cn-shanghai.aliyuncs.com/20241222/nina%E9%85%8D%E5%90%88%E8%99%9A%E6%8B%9F%E5%A4%A9%E6%96%87%E9%A6%86%5Bstellarium%5D%E4%BD%BF%E7%94%A8.pdf">PDF文件</a></h3><hr>
+<p>请多多指点！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.steveling.cn">Steve Ling</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.steveling.cn/2024/12/22/onsteplite/">https://www.steveling.cn/2024/12/22/onsteplite/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.steveling.cn" target="_blank">桃江老凌的小破站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OnStep/">OnStep</a><a class="post-meta__tags" href="/tags/GoTo/">GoTo</a><a class="post-meta__tags" href="/tags/%E8%B5%A4%E9%81%93%E4%BB%AA/">赤道仪</a></div><div class="post_share"><div class="social-share" data-image="/img/icon.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/09/15/2025njityysys/" title="2025越野机器人创新工作坊招新活动"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2025越野机器人创新工作坊招新活动</div></div></a></div><div class="next-post pull-right"><a href="/2024/09/12/2024njityysys/" title="南京工程学院——越野实验室招新总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">南京工程学院——越野实验室招新总结</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Steve Ling</div><div class="author-info__description">智能测控监控仙人</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bi7aqu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/BI7AQU" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:steveling0231@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://qm.qq.com/q/exNKjALFqE" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这是桃江老凌的小破站</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">产品介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">安装教程：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#https-www-bilibili-com-video-BV1gS4y1d71d"><span class="toc-number">3.1.</span> <span class="toc-text">https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1gS4y1d71d&#x2F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">移动端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E7%AB%AF%EF%BC%9A"><span class="toc-number">3.3.</span> <span class="toc-text">电脑端：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-ASCOMPlatform"><span class="toc-number">3.3.1.</span> <span class="toc-text">安装 [ASCOMPlatform]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-N-I-N-A"><span class="toc-number">3.3.2.</span> <span class="toc-text">安装 [N.I.N.A]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Stellarium"><span class="toc-number">3.3.3.</span> <span class="toc-text">安装 [Stellarium]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-PHD2"><span class="toc-number">3.3.4.</span> <span class="toc-text">安装 [PHD2]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-OnStep-ASCOM%E9%A9%B1%E5%8A%A8"><span class="toc-number">3.3.5.</span> <span class="toc-text">安装 [OnStep ASCOM驱动]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-CH340G%E9%A9%B1%E5%8A%A8"><span class="toc-number">3.3.6.</span> <span class="toc-text">安装 [CH340G驱动]</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">电脑软件使用教程：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8Stellarium%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">使用Stellarium：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8N-I-N-A%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">使用N.I.N.A：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8PHD2%EF%BC%9A"><span class="toc-number">4.3.</span> <span class="toc-text">使用PHD2：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">其他：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E5%88%9D%E5%A7%8B%E5%9B%BA%E4%BB%B6%EF%BC%9AV4-Lite%E7%89%88%E6%9C%AC"><span class="toc-number">5.1.</span> <span class="toc-text">恢复初始固件：V4 Lite版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#N-I-N-A%E9%85%8D%E5%90%88Stellarium%E4%BD%BF%E7%94%A8%EF%BC%9APDF%E6%96%87%E4%BB%B6"><span class="toc-number">5.2.</span> <span class="toc-text">N.I.N.A配合Stellarium使用：PDF文件</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/10/07/wmwsywxk/" title="我们为谁仰望星空？">我们为谁仰望星空？</a><time datetime="2025-10-07T07:35:00.000Z" title="发表于 2025-10-07 15:35:00">2025-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/09/15/2025njityysys/" title="2025越野机器人创新工作坊招新活动">2025越野机器人创新工作坊招新活动</a><time datetime="2025-09-15T01:29:14.000Z" title="发表于 2025-09-15 09:29:14">2025-09-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/22/onsteplite/" title="Terrans ONSTEP V4 Lite使用教程">Terrans ONSTEP V4 Lite使用教程</a><time datetime="2024-12-22T15:07:50.000Z" title="发表于 2024-12-22 23:07:50">2024-12-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/12/2024njityysys/" title="南京工程学院——越野实验室招新总结">南京工程学院——越野实验室招新总结</a><time datetime="2024-09-12T03:36:30.000Z" title="发表于 2024-09-12 11:36:30">2024-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/07/01/NJIT-WiFi/" title="校园网络NJIT-WiFi使用说明">校园网络NJIT-WiFi使用说明</a><time datetime="2024-07-01T03:12:18.000Z" title="发表于 2024-07-01 11:12:18">2024-07-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Steve Ling</div><div class="framework-info"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn">湘ICP备2024079980号-1</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="false" data-text="富强,民主,文明,和谐,平等,公正,法治,爱国,敬业,诚信,友善" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
